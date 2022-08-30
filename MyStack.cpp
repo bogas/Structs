@@ -3,13 +3,14 @@
 #include <utility>
 using namespace std;
 
-template <class T>
+template <typename T>
 class MyStack{
     public:
-        void push(T&& element){
-            data.push_back(std::forward<T>(element));
+        template <typename K>
+        void push(K&& element){
+            data.push_back(forward<T>(element));
         }
-        T pop(){
+        int pop(){
             auto result = data.back();
             data.erase(data.end()-1);
             return result;
@@ -26,6 +27,6 @@ int main(){
     stack.push(10);
     stack.push(20);
     stack.push(30);
-    cout<<stack.pop()<<" "<<stack.pop()<<" "<<stack.pop()<<endl;
+    cout<<stack.pop()<<" "<<stack.pop()<<" "<<stack.pop()<<" "<<stack.pop()<<endl;
     return 0;
 }
