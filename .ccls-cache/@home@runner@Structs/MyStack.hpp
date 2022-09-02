@@ -15,18 +15,21 @@ class MyStack{
             data.erase(data.end()-1);
             return result;
         }
+        bool isEmpty(){
+          return data.empty();
+        }
+        void printMe(){
+          for(const auto& d : data){
+            cout<<d<<" ";
+          }
+          cout<<endl;
+        }
     private:
         vector<T> data;
 
 };
 
-int main(){
-    MyStack<int> stack;
-    int a = 5;
-    stack.push(a);
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
-    cout<<stack.pop()<<" "<<stack.pop()<<" "<<stack.pop()<<" "<<stack.pop()<<endl;
-    return 0;
+MyStack<int> reverseStack(MyStack<int> stack){
+  if(stack.isEmpty())
+    return MyStack<int>{};
 }

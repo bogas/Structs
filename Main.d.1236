@@ -1,0 +1,1 @@
+Main.o: Main.cpp MyStack.hpp MyArray.hpp Problems.hpp
